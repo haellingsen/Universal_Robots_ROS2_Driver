@@ -92,10 +92,13 @@ RUN apt-get update && apt-get install -y xvfb \
 # VNC viewer
 EXPOSE 5566
 
-COPY ./entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 COPY ./wait_dashboard_server.sh /wait_dashboard_server.sh
 RUN chmod 755 /wait_dashboard_server.sh
 
+
+# CMD ["/bin/ls", "-lah", "/"]
+CMD ["/bin/cat", "/entrypoint.sh"]
 ENTRYPOINT ["/entrypoint.sh"]

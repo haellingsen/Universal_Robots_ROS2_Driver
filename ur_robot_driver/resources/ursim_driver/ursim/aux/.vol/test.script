@@ -1,0 +1,12 @@
+initpoint = p[0.1365, -0.360, 0.2, 0.77,3,0.0]
+movel(initpoint)
+p=initpoint
+i=0
+while i<10:
+    p = pose_trans(p, p[+0.1,0,0,0,0,0])
+    movel(p)
+    p = pose_trans(p, p[-0.1,0.030,0,0,0,0])
+    movel(p)
+    i = i + 1
+end
+movel(initpoint)

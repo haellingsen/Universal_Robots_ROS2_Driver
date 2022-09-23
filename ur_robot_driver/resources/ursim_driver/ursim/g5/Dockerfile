@@ -21,7 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 # Set Version Information
 ARG VERSION
@@ -115,4 +115,7 @@ ADD ./aux/externalcontrol-1.0.5.urcap /ursim/GUI/bundle/com.fzi.externalcontrol-
 ADD ./aux/rs485-1.0.urcap /ursim/GUI/bundle/com.fzi.rs485-1.0.0.jar
 
 # This will start the simulator
+
+# CMD ["/bin/ls", "-lah", "/"]
+CMD ["/bin/cat", "/entrypoint.sh"]
 ENTRYPOINT ["/entrypoint.sh"]
